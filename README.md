@@ -1,4 +1,4 @@
-# angular-chrome-extension
+# colosseum
 
 ## Description:
 This project is an angular template for creating chrome extension 
@@ -13,11 +13,11 @@ Generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.
 #### Configure extensions:
 Clone repo and install dependencies:  
 ```bash 
-git clone --depth 1 https://github.com/radiium/angular-chrome-extension
-cd angular-chrome-extension
+git clone --depth 1 https://github.com/radiium/colosseum
+cd colosseum
 npm install
 ```
-Find and replace ```angular-chrome-extension``` string by your app name.
+Find and replace ```colosseum``` string by your app name.
 May be adjust rules in src/manifest.json like permissions, content_security_policy, etc....
 
 #### Run extension:

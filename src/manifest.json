@@ -1,6 +1,6 @@
 {
-  "name": "angular-chrome-extension",
-  "short_name": "angular-chrome-extension",
+  "name": "colosseum",
+  "short_name": "colosseum",
   "description": "Template for angular chrome extension",
   "version": "1.0.0",
   "manifest_version": 3,
