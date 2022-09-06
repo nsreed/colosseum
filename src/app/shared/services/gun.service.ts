@@ -11,6 +11,7 @@ export class GunService {
   gun: IGunInstance;
 
   constructor() {
+    // FIXME this should use {localStorage: false} but indexeddb doesn't persist data
     this.gun = new Gun({
     });
    }

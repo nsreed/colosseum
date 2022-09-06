@@ -4,12 +4,14 @@ import { COMPONENTS } from './components';
 import { DIRECTIVES } from './directives';
 import { PIPES } from './pipes';
 import { FormsModule } from '@angular/forms';
+import { GlobalNavigationComponent } from './components/global-navigation/global-navigation.component';
 
 @NgModule({
     declarations: [
         ...COMPONENTS,
         ...DIRECTIVES,
         ...PIPES,
+        GlobalNavigationComponent,
     ],
     imports: [
         CommonModule,
@@ -20,7 +22,8 @@ import { FormsModule } from '@angular/forms';
         FormsModule,
         ...COMPONENTS,
         ...DIRECTIVES,
-        ...PIPES
+        ...PIPES,
+        GlobalNavigationComponent
     ]
 })
 export class SharedModule { }
