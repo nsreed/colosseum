@@ -1,5 +1,11 @@
 <main>
-    <h2>tab page</h2>
-    <app-global-navigation></app-global-navigation>
-    <button (click)="openOptionsPage()">Open options page</button>
+  <h2>tab page</h2>
+  <app-global-navigation></app-global-navigation>
+  <div>
+    <div *ngFor="let channel of channels">
+      <div *ngFor="let block of channel.blocks">
+        {{ block | json }}
+      </div>
+    </div>
+  </div>
 </main>
