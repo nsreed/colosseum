@@ -13,8 +13,10 @@ export class PopupComponent extends BaseAbstract {
     }
 
     async addBlock() {
-        const [current] = await chrome.tabs.query({active: true, currentWindow: true});
+        const [current] = await chrome.tabs.query({ active: true, currentWindow: true });
         const url = current.url as string;
+        // chrome.tabs.captureVisibleTab();
+
         const urlGun = this.gunService.gun.get('block').get(url);
         // TODO url contains path separators (. & /), you should find a better index
         urlGun.get('time').put(Date.now());
