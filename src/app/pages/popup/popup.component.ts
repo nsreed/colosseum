@@ -10,4 +10,10 @@ export class PopupComponent extends BaseAbstract {
     constructor() {
         super();
     }
+
+    async addBlock() {
+        const [current] = await chrome.tabs.query({active: true, currentWindow: true});
+
+        console.log(current.url);
+    }
 }
