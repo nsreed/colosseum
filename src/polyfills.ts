@@ -51,3 +51,16 @@ import 'zone.js';  // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+
+ import 'gun';
+ import 'gun/sea';
+ 
+ import 'gun/lib/radix';
+ import 'gun/lib/radisk';
+ import 'gun/lib/rindexed';
+ import 'gun/lib/load';
+ import 'gun/lib/open';
+ import 'gun/lib/then';
+ import 'gun/lib/time';
+ import 'gun/lib/not';
+ import 'gun/lib/unset';
