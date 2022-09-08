@@ -2,10 +2,9 @@
   <h2>tab page</h2>
   <app-global-navigation></app-global-navigation>
   <div>
-    <div *ngFor="let channel of channels">
-      <div *ngFor="let block of channel.blocks">
-        {{ block | json }}
-      </div>
+    <div *ngFor="let bkv of blocks | keyvalue">
+      {{ bkv.key }}:
+      <pre>{{ bkv.value | json }}</pre>
     </div>
   </div>
 </main>
