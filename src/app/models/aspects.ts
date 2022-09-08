@@ -1,6 +1,3 @@
-import { BlockScopeAwareRuleWalker } from "tslint";
-import { gunzip } from "zlib";
-
 type HasOwner = {
   owner: User;
 }
@@ -14,7 +11,7 @@ export type TimeStamp = {
   /** Minutes */
   timezoneOffset: number;
   /** Milliseconds */
-  time: BigInt;
+  time: number; // TODO confirm this can be bigint in gun
 }
 
 /** Base Content Types  */
@@ -53,11 +50,11 @@ export type UnionBlock = Channel | CitationBlock | ImageBlock | ImageCitationBlo
 export type BaseBlock = HasOwner & Title & Description;
 export type ExtBlock<T> = BaseBlock & T;
 
-const block: ExtBlock<VideoReference> = {};
-type VideoBlock = Block<Reference<Video>>; // THIS
-type PdfCitationBlock = Block<Citation<PDF>>; // THIS
-type PdfBlock = Block<PDF>;
-const vblock: VideoBlock = {};
+// const block: ExtBlock<VideoReference> = {};
+// type VideoBlock = Block<Reference<Video>>; // THIS
+// type PdfCitationBlock = Block<Citation<PDF>>; // THIS
+// type PdfBlock = Block<PDF>;
+// const vblock: VideoBlock = {};
 
 /**
  * As a user, I want to
