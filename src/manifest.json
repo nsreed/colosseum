@@ -20,7 +20,8 @@
     "tabs",
     "chrome://favicon/",
     "history",
-    "storage"
+    "storage",
+    "activeTab"
   ],
   "icons": {
     "512": "/assets/icons/android-chrome-512x512.png",
