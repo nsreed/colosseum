@@ -17,11 +17,11 @@ export class PopupComponent extends BaseAbstract {
     const [current] = await chrome.tabs.query({ active: true, currentWindow: true });
     const url = current.url as string;
     const title = current.title;
+    const base64 = await chrome.tabs.captureVisibleTab();
 
     const owner = {
       userName: 'user'
     }
-    const base64 = 'abcdef0123456789';
     const urlGun = this.gunService.gun.get('blocks').get(url);
     // TODO url contains path separators (. & /), you should find a better index
 
@@ -31,11 +31,11 @@ export class PopupComponent extends BaseAbstract {
     }
 
     const block = {
+      base64,
       title,
       titleText: title,
       url,
       owner,
-      base64,
       timeStamp
     };
     console.log({ block });

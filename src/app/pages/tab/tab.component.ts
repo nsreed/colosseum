@@ -9,18 +9,9 @@ import { UnionBlock } from '../../models/aspects';
   styleUrls: ['./tab.component.scss']
 })
 export class TabComponent extends BaseAbstract {
-  channels: UnionBlock[] = [
-    {
-      title: 'test',
-      titleText: 'test',
-      url: 'test.com',
-      owner: {
-        userName: 'user',
-      },
-      base64: 'abcdef0123456789'
-    }
-  ];
-  blocks: any = {};
+  blocks: {
+    [key: string]: any
+  } = {};
   constructor(public gunService: GunService) {
     super();
     console.log('starting list, getting block from root?');
