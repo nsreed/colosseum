@@ -96,6 +96,7 @@ export type IBlock<T> = T & Block;
 /** Channels */
 
 interface Channel extends Block {
+  base64: string;
   blocks: Block[];
 }
 
