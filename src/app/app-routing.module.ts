@@ -18,11 +18,11 @@ const routes: Routes = [
         path: '',
         redirectTo: '/popup',
         pathMatch: 'full'
-    },
+    }
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(routes, { useHash: true, relativeLinkResolution: 'legacy' })],
+    imports: [RouterModule.forRoot(routes, { useHash: true, initialNavigation: 'enabled', relativeLinkResolution: 'legacy' })],
     exports: [RouterModule]
 })
 export class AppRoutingModule { }
