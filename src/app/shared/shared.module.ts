@@ -5,6 +5,9 @@ import { DIRECTIVES } from './directives';
 import { PIPES } from './pipes';
 import { FormsModule } from '@angular/forms';
 import { GlobalNavigationComponent } from './components/global-navigation/global-navigation.component';
+import { BlockComponent } from './components/block/block.component';
+import { TimeStampComponent } from './components/time-stamp/time-stamp.component';
+import { BlockTitleComponent } from './components/block-title/block-title.component';
 
 @NgModule({
     declarations: [
@@ -12,6 +15,9 @@ import { GlobalNavigationComponent } from './components/global-navigation/global
         ...DIRECTIVES,
         ...PIPES,
         GlobalNavigationComponent,
+        BlockComponent,
+        TimeStampComponent,
+        BlockTitleComponent,
     ],
     imports: [
         CommonModule,
@@ -23,7 +29,8 @@ import { GlobalNavigationComponent } from './components/global-navigation/global
         ...COMPONENTS,
         ...DIRECTIVES,
         ...PIPES,
-        GlobalNavigationComponent
+        GlobalNavigationComponent,
+        BlockComponent
     ]
 })
 export class SharedModule { }

@@ -1,0 +1,8 @@
+<ng-container *ngIf="block">
+  {{ block.owner?.userName }} @
+  <app-time-stamp [block]="block"></app-time-stamp>
+  <app-block-title [block]="block"></app-block-title>
+
+  {{ block.url }}
+  <img class="screenshot" src="{{ block.base64 }}" />
+</ng-container>
