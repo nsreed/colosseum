@@ -39,6 +39,8 @@ export class PopupComponent extends BaseAbstract {
       timeStamp
     };
     console.log({ block });
-    urlGun.put(block);
+    urlGun.put(block, (ack) => {
+      console.log('put ack', ack);
+    });
   }
 }

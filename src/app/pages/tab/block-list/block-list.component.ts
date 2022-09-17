@@ -16,6 +16,7 @@ export class BlockListComponent implements OnInit {
       console.log({ data });
       delete data['_'];
       console.log(data);
+      Object.keys(data).filter(k => !data[k]).forEach(k => delete data[k]);
       Object.keys(data).filter(k => !data[k].owner).forEach(k => delete data[k]);
       this.blocks = data;
     });
