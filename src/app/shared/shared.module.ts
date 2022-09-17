@@ -8,6 +8,9 @@ import { GlobalNavigationComponent } from './components/global-navigation/global
 import { BlockComponent } from './components/block/block.component';
 import { TimeStampComponent } from './components/time-stamp/time-stamp.component';
 import { BlockTitleComponent } from './components/block-title/block-title.component';
+import { BlockUrlComponent } from './components/block-url/block-url.component';
+import { BlockScreenshotComponent } from './components/block-screenshot/block-screenshot.component';
+import { BlockOwnerComponent } from './components/block-owner/block-owner.component';
 
 @NgModule({
     declarations: [
@@ -18,6 +21,9 @@ import { BlockTitleComponent } from './components/block-title/block-title.compon
         BlockComponent,
         TimeStampComponent,
         BlockTitleComponent,
+        BlockUrlComponent,
+        BlockScreenshotComponent,
+        BlockOwnerComponent,
     ],
     imports: [
         CommonModule,
