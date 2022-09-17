@@ -3,10 +3,12 @@ import { CommonModule } from '@angular/common';
 import { SharedModule } from '@shared/shared.module';
 import { TabComponent } from './tab.component';
 import { TabRoutingModule } from './tab-routing.module';
+import { BlockListComponent } from './block-list/block-list.component';
 
 @NgModule({
     declarations: [
-        TabComponent
+        TabComponent,
+        BlockListComponent
     ],
     imports: [
         CommonModule,

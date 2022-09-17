@@ -1,0 +1,5 @@
+<div>
+  <div *ngFor="let bkv of blocks | keyvalue">
+    <app-block [block]="bkv.value"></app-block>
+  </div>
+</div>
