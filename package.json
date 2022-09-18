@@ -11,7 +11,7 @@
     "chrome api"
   ],
   "scripts": {
-    "start": "npm run watch",
+    "start": "yarn run watch",
     "watch": "ng build --watch --configuration=development",
     "build": "ng build --configuration=production",
     "test": "ng test",

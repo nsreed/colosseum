@@ -6,7 +6,7 @@
       "script": "start",
       "problemMatcher": [],
       "label": "npm: start",
-      "detail": "npm run watch"
+      "detail": "npm run watch",
     }
   ]
 }
