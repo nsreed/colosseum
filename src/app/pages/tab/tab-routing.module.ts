@@ -4,17 +4,23 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabComponent } from './tab.component';
 import { BlockListComponent } from './block-list/block-list.component';
+import { ChannelListComponent } from './channel-list/channel-list.component';
 
 const routes: Routes = [
   {
-    path: 'list',
-    component: BlockListComponent
-  },
-  {
     path: '',
-    redirectTo: '/tab/list',
-    pathMatch: 'full'
-  },
+    component: TabComponent,
+    children: [
+      {
+        path: 'blocks',
+        component: BlockListComponent
+      },
+      {
+        path: 'channels',
+        component: ChannelListComponent
+      }
+    ]
+  }
 ];
 
 @NgModule({

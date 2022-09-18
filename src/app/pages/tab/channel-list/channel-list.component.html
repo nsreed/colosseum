@@ -1,0 +1,7 @@
+<h3>Channel List</h3>
+<div>
+  <div *ngFor="let channel of channels | keyvalue">
+    <pre>{{ channel.value.title }}</pre>
+  </div>
+</div>
+<button (click)="onCreateClick()">Create a New Channel</button>

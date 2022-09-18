@@ -1,17 +1,18 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { IGunInstance } from 'gun';
 import Gun from 'gun';
+import { IGunRoot } from '../../models/arena';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GunService {
-  gun: IGunInstance;
+  gun: IGunInstance<IGunRoot>;
 
-  constructor() {
-    // FIXME this should use {localStorage: false} but indexeddb doesn't persist data
+  constructor(private ngZone: NgZone) {
+
     this.gun = new Gun({
-      localStorage: true
+      localStorage: false,
     });
   }
 }

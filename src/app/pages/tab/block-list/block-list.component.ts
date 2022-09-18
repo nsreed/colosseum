@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { GunService } from '../../../shared/services/gun.service';
+import { IBlock } from '../../../models/arena';
 
 @Component({
   selector: 'app-block-list',
@@ -7,22 +8,26 @@ import { GunService } from '../../../shared/services/gun.service';
   styleUrls: ['./block-list.component.scss']
 })
 export class BlockListComponent implements OnInit {
+  blocksNode = this.gunService.gun.get('defaultUser').get('blocks');
   blocks: {
-    [key: string]: any
+    [key: string]: IBlock
   } = {};
-  constructor(public gunService: GunService) {
+  constructor(public gunService: GunService, private changes: ChangeDetectorRef) {
     console.log('starting list, getting block from root?');
-    gunService.gun.get('blocks').open((data) => {
-      console.log({ data });
+    this.blocksNode.open((d) => {
+      const data = { ...d } as any;
       delete data['_'];
-      console.log(data);
-      Object.keys(data).filter(k => !data[k]).forEach(k => delete data[k]);
+      Object.keys(data).filter(k => data[k] === null || data[k] === undefined).forEach(k => delete data[k]);
       Object.keys(data).filter(k => !data[k].owner).forEach(k => delete data[k]);
       this.blocks = data;
+      this.changes.detectChanges();
     });
   }
 
   ngOnInit(): void {
   }
 
+  onRemoveClick(key: string) {
+    this.blocksNode.get<IBlock>(key as any).put(null as any);
+  }
 }

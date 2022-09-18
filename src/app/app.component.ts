@@ -16,11 +16,19 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-export class AppComponent {
-  ready = false;
-  constructor(gunService: GunService) {
-    const version = gunService.gun.get('appVersion');
-    version.once(v => {
+    chrome.action.onClicked.addListener(tab => {
+      console.log('clicked it');
+      chrome.action.setBadgeText({
+        text: ''
+      });
+      chrome.action.setBadgeBackgroundColor({
+        color: 'blue'
+      });
+    });
+
+    chrome.runtime.onMessage.addListener((message, sender) => {
+      console.log(message, sender);
+    });
 
     const version = this.gunService.gun.get('version');
 

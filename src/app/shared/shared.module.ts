@@ -11,6 +11,7 @@ import { BlockTitleComponent } from './components/block-title/block-title.compon
 import { BlockUrlComponent } from './components/block-url/block-url.component';
 import { BlockScreenshotComponent } from './components/block-screenshot/block-screenshot.component';
 import { BlockOwnerComponent } from './components/block-owner/block-owner.component';
+import { BlockFormComponent } from './components/block-form/block-form.component';
 
 @NgModule({
     declarations: [
@@ -24,6 +25,7 @@ import { BlockOwnerComponent } from './components/block-owner/block-owner.compon
         BlockUrlComponent,
         BlockScreenshotComponent,
         BlockOwnerComponent,
+        BlockFormComponent,
     ],
     imports: [
         CommonModule,

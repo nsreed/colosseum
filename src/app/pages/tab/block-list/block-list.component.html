@@ -1,5 +1,7 @@
 <div>
+  <h3>Block List</h3>
   <div *ngFor="let bkv of blocks | keyvalue">
+    <button (click)="onRemoveClick(bkv.key)">Remove</button>
     <app-block [block]="bkv.value"></app-block>
   </div>
 </div>

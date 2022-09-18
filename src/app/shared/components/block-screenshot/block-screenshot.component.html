@@ -1,1 +1,5 @@
-<img class="screenshot" src="{{ block?.base64 }}" />
+<img
+  *ngIf="block?.content?.screenshot?.base64"
+  class="screenshot"
+  src="{{ block?.content?.screenshot?.base64 }}"
+/>

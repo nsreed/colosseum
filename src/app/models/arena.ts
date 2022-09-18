@@ -58,6 +58,10 @@ export type IBlock<T = any> = {
   },
   description?: string;
   content?: T;
+  created?: {
+    time: number;
+    timezoneOffset: number;
+  }
 }
 
 export type IChannel = IBlock<any> & {
@@ -70,6 +74,12 @@ export type IUserRoot = {
 }
 
 export type IGunRoot = {
+  version: {
+    major: number;
+    minor: number;
+    revision: number;
+  }
+} & {
   [key: string]: IUserRoot;
 }
 
