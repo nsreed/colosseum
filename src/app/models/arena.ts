@@ -15,7 +15,6 @@ export interface ReferenceBlock extends BaseBlock {
   screenshot?: string; // screenshot?
 }
 
-
 export interface CitationBlock extends ContentBlock {
   reference: ReferenceBlock;
 }
@@ -29,4 +28,84 @@ export interface Gladiator {
 
 export interface Channel extends BaseBlock {
   blocks: BaseBlock[];
+}
+
+type ISet<T> = {
+  [key: string]: T | null
+};
+
+export type IScreenshot = {
+  base64: string;
+}
+
+export type IResource = {
+  url: string;
+  title: string;
+}
+
+export type IReference<T> = T & {
+  screenshot: IScreenshot;
+}
+
+export type ICitation<T> = T & {
+  body: string;
+}
+
+export type IBlock<T = any> = {
+  title: string;
+  owner: {
+    userName: string;
+  },
+  description?: string;
+  content?: T;
+}
+
+export type IChannel = IBlock<any> & {
+  blocks: ISet<IBlock>;
+}
+
+export type IUserRoot = {
+  blocks: ISet<IBlock>;
+  channels: ISet<IChannel>;
+}
+
+export type IGunRoot = {
+  [key: string]: IUserRoot;
+}
+
+const vblock: IBlock<IReference<IResource>> = {
+  title: 'video',
+  owner: { userName: 'bob' },
+  description: 'a test reference to a video',
+  content: {
+    title: 'haha cats',
+    screenshot: {
+      base64: 'adfadsfasfdadsffsd'
+    },
+    url: 'http://cats.com'
+  }
+};
+
+const cblock: IBlock<ICitation<IReference<IResource>>> = {
+  title: 'video2',
+  owner: { userName: 'bob' },
+  description: 'a test reference to a video',
+  content: {
+    title: 'haha cats',
+    screenshot: {
+      base64: 'adfadsfasfdadsffsd'
+    },
+    url: 'http://cats.com',
+    body: 'Hello. I love cats. Cats cats cats'
+  }
+};
+
+const channelBlock: IChannel = {
+  title: 'default channel',
+  owner: { userName: 'bob' },
+  blocks: {
+    x: null,
+    y: null,
+    z: null
+  }
 }

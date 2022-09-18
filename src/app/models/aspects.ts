@@ -50,58 +50,6 @@ export type UnionBlock = Channel | CitationBlock | ImageBlock | ImageCitationBlo
 export type BaseBlock = HasOwner & Title & Description;
 export type ExtBlock<T> = BaseBlock & T;
 
-interface IScreenshot {
-  base64: string;
-}
-
-interface IResource {
-  url: string;
-  title: string;
-}
-
-type IReference<T> = T & {
-  screenshot: IScreenshot;
-}
-
-type ICitation<T> = T & {
-  body: string;
-}
-
-interface IBlock<T> {
-  title: string;
-  owner: {
-    username: string;
-  },
-  description?: string;
-  content?: T;
-}
-
-const vblock: IBlock<IReference<IResource>> = {
-  title: 'video',
-  owner: { username: 'bob' },
-  description: 'a test reference to a video',
-  content: {
-    title: 'haha cats',
-    screenshot: {
-      base64: 'adfadsfasfdadsffsd'
-    },
-    url: 'http://cats.com'
-  }
-};
-
-const cblock: IBlock<ICitation<IReference<IResource>>> = {
-  title: 'video',
-  owner: { username: 'bob' },
-  description: 'a test reference to a video',
-  content: {
-    title: 'haha cats',
-    screenshot: {
-      base64: 'adfadsfasfdadsffsd'
-    },
-    url: 'http://cats.com',
-    body: 'Hello. I love cats. Cats cats cats'
-  }
-};
 
 // const block: ExtBlock<VideoReference> = {};
 // type VideoBlock = Block<Reference<Video>>; // THIS
