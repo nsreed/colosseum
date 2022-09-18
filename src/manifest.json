@@ -18,10 +18,10 @@
   "permissions": [
     "bookmarks",
     "tabs",
-    "chrome://favicon/",
     "history",
     "storage",
-    "activeTab"
+    "activeTab",
+    "unlimitedStorage"
   ],
   "icons": {
     "512": "/assets/icons/android-chrome-512x512.png",

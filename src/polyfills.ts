@@ -55,9 +55,13 @@ import 'zone.js';  // Included with Angular CLI.
 import 'gun';
 import 'gun/sea';
 
+//*!!! DO NOT CHANGE THE ORDER OF THESE!!! NOR REMOVE ANY OF THEM!!!*//
 import 'gun/lib/radix';
 import 'gun/lib/radisk';
+import 'gun/lib/store';
 import 'gun/lib/rindexed';
+//*^^^ THOSE 4. ^^^*//
+
 import 'gun/lib/load';
 import 'gun/lib/open';
 import 'gun/lib/then';
