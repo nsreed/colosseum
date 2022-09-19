@@ -26,6 +26,9 @@
     "32": "/assets/icons/favicon-32x32.png",
     "16": "/assets/icons/favicon-16x16.png"
   },
+  "content_security": {
+    "extension_pages": "script-src 'self' https://fonts.gstatic.com; unsafe-inline 'self'; connect-src 'self'; object-src 'self'; font-src 'self' https://fonts.gstatic.com; wasm-unsafe-eval: 'self';"
+  },
   "web_accessible_resources": [
     {
       "resources": [

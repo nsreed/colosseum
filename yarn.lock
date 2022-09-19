@@ -202,6 +202,15 @@
   dependencies:
     tslib "^2.3.0"
 
+"@angular/cdk@14.2.2":
+  version "14.2.2"
+  resolved "https://registry.yarnpkg.com/@angular/cdk/-/cdk-14.2.2.tgz#9e49620c816b7f34e7c59b0dee705e7c1b1260df"
+  integrity sha512-PXEnhX+QDOsmHVVnqTuoGaK7Wn9hFd5kWAmHTTU7lZr3XVu/AtDcEU+LB19wOFU0fY+kSYHMgN+BYo1TiR8vbw==
+  dependencies:
+    tslib "^2.3.0"
+  optionalDependencies:
+    parse5 "^5.0.0"
+
 "@angular/cli@^14.2.3":
   version "14.2.3"
   resolved "https://registry.yarnpkg.com/@angular/cli/-/cli-14.2.3.tgz#32612e5890be2c7501216071af50142bbf8fad48"
@@ -265,10 +274,24 @@
   dependencies:
     tslib "^2.3.0"
 
+"@angular/flex-layout@^14.0.0-beta.40":
+  version "14.0.0-beta.40"
+  resolved "https://registry.yarnpkg.com/@angular/flex-layout/-/flex-layout-14.0.0-beta.40.tgz#ec3c09389f5ae277d09aebcb2a0c8bf7c1329967"
+  integrity sha512-lYi2BKovNk5u2wmj/AMIMqfUzCBEt99Wu/Gfa+1mUIlw3voKCmIsV2XYBhX4adRdD+dRagY3Opger43JR7PXEw==
+  dependencies:
+    tslib "^2.3.0"
+
 "@angular/forms@^14.2.2":
   version "14.2.2"
   resolved "https://registry.yarnpkg.com/@angular/forms/-/forms-14.2.2.tgz#27dfddddc02091b6860144d5c1b065cc3d9a5712"
   integrity sha512-lq6PpLMNfs0KcIhkQrUVfKuP4hZSeUQyKOErvoLrPhDiakvOWYoQZKh6XHsbQRcuhWKHy6IITldz6sg8pWVrTw==
+  dependencies:
+    tslib "^2.3.0"
+
+"@angular/material@14.2.2":
+  version "14.2.2"
+  resolved "https://registry.yarnpkg.com/@angular/material/-/material-14.2.2.tgz#b9d834180eb0bba07a6aa946c090a6155b9716e7"
+  integrity sha512-jVCaESSTTkLjRvMzSQj294s0Lz1YMVFkl0svrMtWgkUMXHEfx2Vjw6FXdrVrBXlxEIrpfhkTEXVN2DC1kkAkQw==
   dependencies:
     tslib "^2.3.0"
 
@@ -5635,6 +5658,11 @@ parse5-sax-parser@^6.0.1:
   integrity sha512-kXX+5S81lgESA0LsDuGjAlBybImAChYRMT+/uKCEXFBFOeEhS52qUCydGhU3qLRD8D9DVjaUo821WK7DM4iCeg==
   dependencies:
     parse5 "^6.0.1"
+
+parse5@^5.0.0:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/parse5/-/parse5-5.1.1.tgz#f68e4e5ba1852ac2cadc00f4555fff6c2abb6178"
+  integrity sha512-ugq4DFI0Ptb+WWjAdOK16+u/nHfiIrcE+sh8kZMaM0WllQKLI9rOUq6c2b7cwPkXdzfQESqvoqK6ug7U/Yyzug==
 
 parse5@^6.0.1:
   version "6.0.1"

@@ -2,10 +2,12 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "./",
     "sourceMap": true,
-    "sourceRoot": "./",
-    "outDir": "/dist/out-tsc",
+    "sourceRoot": "src/",
+    "outDir": "dist/out-tsc",
+    "listEmittedFiles": true,
+    "listFiles": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitOverride": true,
