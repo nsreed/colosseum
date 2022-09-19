@@ -7,6 +7,7 @@ import * as path from 'path';
 module.exports = {
   ...config,
   mode: 'development',
+  devtool: 'source-map',
   plugins: [
     new ExtensionReloader({
       reloadPage: true,

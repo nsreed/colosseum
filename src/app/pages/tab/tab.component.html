@@ -1,8 +1,9 @@
-<nav>
-  <a [routerLink]="'/tab/blocks'">Blocks</a>
-  <a [routerLink]="'/tab/channels'">Channels</a>
-</nav>
+<mat-toolbar>
+  <a mat-button [routerLink]="'/tab/channels'">Channels</a>
+  <a mat-icon-button [routerLink]="'/options'" role="primary"
+    ><mat-icon>mi-settings</mat-icon></a
+  >
+</mat-toolbar>
 <main>
-  <h2>tab page</h2>
   <router-outlet></router-outlet>
 </main>
