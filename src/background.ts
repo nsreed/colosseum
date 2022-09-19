@@ -1,34 +1,40 @@
 async function Install<T>(globalThis: T) {
-  const log = (message: any, ...args: any[]) => {
-    try {
-      console.warn(message, ...args);
-    } catch {
-      debugger;
+  console.log('HEY LOOK AT ME');
+  let tick = 0;
+  const log = async (text: any, ...args: any[]) => {
+    const message = {
+      type: 'log',
+      sequence: ++tick,
+      text,
+      args
+    };
+    // const current = await chrome.tabs.getCurrent();
+    const [current] = await chrome.tabs.query({ active: true });
+    if (current) {
+      chrome.tabs.sendMessage(current.id || 0, {});
+      chrome.runtime.sendMessage(message);
     }
-  }
-  log('hi');
-  chrome.storage.local.get(["name"], async ({ name }) => {
-    // chrome.tabs.sendMessage(0, { name });
-    chrome.runtime.sendMessage({
-      type: 'set-name',
-      name
-    });
-    const tabs = await chrome.tabs.query({ active: true });
-    tabs.map(tab => tab.id || 0).forEach((id) => {
-      chrome.tabs.sendMessage(id, {
-        type: 'set-name',
-        name
-      })
-    })
-  });
+  };
+  log(`globalThis: ${globalThis ? 'yes' : 'no'}`);
 
-  chrome.browserAction.onClicked.addListener(tab => {
-    chrome.storage.local.get(["name"], ({ name }) => {
-      chrome.tabs.sendMessage(tab.id || 0, { name });
-    });
-    chrome.tabs.sendMessage(tab.id || 0, {
-      type: 'clicked'
-    })
+  // TODO Event management
+  // chrome.runtime.onUpdateAvailable
+  // chrome.runtime.onInstalled // * special bc/its when we make context menus
+
+  // chrome.runtime.onStartup
+  // chrome.runtime.onSuspend
+
+  // chrome.runtime.onSuspendCanceled
+  // chrome.runtime.onRestartRequired
+
+  // chrome.runtime.onConnectExternal
+  // chrome.runtime.onMessageExternal
+  // chrome.runtime.onMessage
+
+  // chrome.alarms.create('keepalive', { periodInMinutes: 1 });
+
+  chrome.action.onClicked.addListener((tab) => {
+    log(`the tab ${tab?.id} was clicked`);
   });
 }
 

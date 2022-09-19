@@ -13,11 +13,12 @@
     "service_worker": "background.js"
   },
   "permissions": [
+    "activeTab",
+    "alarms",
     "bookmarks",
-    "tabs",
     "history",
     "storage",
-    "activeTab",
+    "tabs",
     "unlimitedStorage"
   ],
   "icons": {

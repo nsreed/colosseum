@@ -1,7 +1,12 @@
-<div>
-  <h3>Block List</h3>
+<!-- <div>
   <div *ngFor="let bkv of blocks | keyvalue">
     <button (click)="onRemoveClick(bkv.key)">Remove</button>
     <app-block [block]="bkv.value"></app-block>
   </div>
+</div> -->
+<div fxLayout="row wrap" fxFlexAlign.lg="center center" fxLayoutGap="1em">
+  <app-block [block]="block.value" *ngFor="let block of blocks | keyvalue">
+    <!-- <button (click)="onRemoveClick(block.key)">Remove</button> -->
+  </app-block>
 </div>
+<!-- <button mat-button (click)="onCreateClick()">Create a New Channel</button> -->

@@ -1,7 +1,5 @@
-<main>
-    <h2>Colosseum</h2>
-    <app-global-navigation></app-global-navigation>
-    <button (click)="addBlock()">Add Block</button>
-    <button (click)="openOptionsPage()">Open options page</button>
-    <button (click)="openListPage()">Open list page</button>
-</main>
+<mat-action-list>
+  <button mat-list-item (click)="addBlock()">Add Block</button>
+  <button mat-list-item (click)="openOptionsPage()">Open options page</button>
+  <button mat-list-item (click)="openListPage()">Open list page</button>
+</mat-action-list>

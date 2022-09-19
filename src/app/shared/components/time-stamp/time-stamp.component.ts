@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { IBlock } from '../../../models/arena';
 
 @Component({
   selector: 'app-time-stamp',
@@ -7,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TimeStampComponent implements OnInit {
   @Input()
-  block: any;
+  block: IBlock;
 
   constructor() { }
 

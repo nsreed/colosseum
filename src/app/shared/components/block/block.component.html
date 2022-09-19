@@ -1,7 +1,19 @@
-<ng-container *ngIf="block">
-  <app-block-owner [block]="block"></app-block-owner>
-  <app-time-stamp [block]="block"></app-time-stamp>
-  <app-block-title [block]="block"></app-block-title>
-  <app-block-url [block]="block"></app-block-url>
-  <app-block-screenshot [block]="block"></app-block-screenshot>
-</ng-container>
+<mat-card *ngIf="block">
+  <mat-card-title
+    ><app-block-title [block]="block"></app-block-title
+  ></mat-card-title>
+  <mat-card-subtitle>
+    <app-block-owner [block]="block"></app-block-owner>
+    <app-time-stamp [block]="block"></app-time-stamp>
+  </mat-card-subtitle>
+
+  <img
+    mat-card-image
+    *ngIf="block?.content?.screenshot?.base64"
+    src="{{ block?.content?.screenshot?.base64 }}"
+  />
+  <mat-card-actions>
+    <app-block-url [block]="block"></app-block-url>
+  </mat-card-actions>
+  <!-- <app-block-screenshot [block]="block"></app-block-screenshot> -->
+</mat-card>

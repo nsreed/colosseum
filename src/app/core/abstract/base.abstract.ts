@@ -6,34 +6,34 @@ import { Subscription } from 'rxjs';
 @Directive()
 export class BaseAbstract implements OnDestroy {
 
-    protected subs: { [key: string]: Subscription } = {};
-    protected timeouts: { [key: string]: any } = {};
-    protected optionsService: OptionsService;
+  protected subs: { [key: string]: Subscription } = {};
+  protected timeouts: { [key: string]: any } = {};
+  protected optionsService: OptionsService;
 
-    constructor() {
-        this.optionsService = AppInjector.injector.get(OptionsService);
-    }
+  constructor() {
+    this.optionsService = AppInjector.injector.get(OptionsService);
+  }
 
-    ngOnDestroy(): void {
-        Object.values(this.subs).forEach((sub: Subscription) => {
-            if (!!sub && !!sub.unsubscribe) {
-                sub.unsubscribe();
-            }
-        });
-        Object.values(this.timeouts).forEach((timeout: any) => {
-            if (!!timeout) {
-                clearTimeout(timeout);
-            }
-        });
-    }
+  ngOnDestroy(): void {
+    Object.values(this.subs).forEach((sub: Subscription) => {
+      if (!!sub && !!sub.unsubscribe) {
+        sub.unsubscribe();
+      }
+    });
+    Object.values(this.timeouts).forEach((timeout: any) => {
+      if (!!timeout) {
+        clearTimeout(timeout);
+      }
+    });
+  }
 
-    openOptionsPage(): void {
-        chrome.runtime.openOptionsPage(() => {
-            console.log('Option page opened')
-        });
-    }
+  openOptionsPage(): void {
+    chrome.runtime.openOptionsPage(() => {
+      console.log('Option page opened')
+    });
+  }
 
-    openListPage():void{
-        chrome.tabs.create({url: 'index.html#/tab'})
-    }
+  openListPage(): void {
+    chrome.tabs.create({ url: 'index.html#/tab' })
+  }
 }

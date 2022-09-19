@@ -1,7 +1,8 @@
-<h3>Channel List</h3>
-<div>
-  <div *ngFor="let channel of channels | keyvalue">
-    <pre>{{ channel.value.title }}</pre>
-  </div>
+<div fxLayout="row wrap" fxFlexAlign.lg="center center" fxLayoutGap="1em">
+  <app-block
+    [block]="channel.value"
+    *ngFor="let channel of channels | keyvalue"
+  >
+  </app-block>
 </div>
-<button (click)="onCreateClick()">Create a New Channel</button>
+<button mat-button (click)="onCreateClick()">Create a New Channel</button>

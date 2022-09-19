@@ -3,28 +3,28 @@ import { BaseAbstract } from '@core/abstract/base.abstract';
 import { Options, ThemeType } from '@models';
 
 @Component({
-    selector: 'app-options',
-    templateUrl: './options.component.html',
-    styleUrls: ['./options.component.scss']
+  selector: 'app-options',
+  templateUrl: './options.component.html',
+  styleUrls: ['./options.component.scss']
 })
 export class OptionsComponent extends BaseAbstract implements OnInit {
 
-    public options?: Options;
-    public themeType: typeof ThemeType = ThemeType;
+  public options?: Options;
+  public themeType: typeof ThemeType = ThemeType;
 
-    constructor() {
-        super();
-    }
+  constructor() {
+    super();
+  }
 
-    ngOnInit(): void {
-        this.subs.options = this.optionsService.state$.subscribe({
-            next: (options: Options) => {
-                this.options = options;
-            }
-        });
-    }
+  ngOnInit(): void {
+    this.subs.options = this.optionsService.state$.subscribe({
+      next: (options: Options) => {
+        this.options = options;
+      }
+    });
+  }
 
-    public selectTheme(theme: ThemeType): void {
-        this.optionsService.setTheme(theme);
-    }
+  public selectTheme(theme: ThemeType): void {
+    this.optionsService.setTheme(theme);
+  }
 }

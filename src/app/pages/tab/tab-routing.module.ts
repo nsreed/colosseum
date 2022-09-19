@@ -18,6 +18,11 @@ const routes: Routes = [
       {
         path: 'channels',
         component: ChannelListComponent
+      },
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: '/tab/channels'
       }
     ]
   }
