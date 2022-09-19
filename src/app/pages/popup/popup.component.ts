@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BaseAbstract } from '@core/abstract/base.abstract';
 import { GunService } from '../../shared/services/gun.service';
 import { TimeStamp } from '../../models/aspects';
@@ -10,11 +10,18 @@ import { IBlock, IReference, IResource } from 'src/app/models/arena';
   templateUrl: './popup.component.html',
   styleUrls: ['./popup.component.scss']
 })
-export class PopupComponent extends BaseAbstract {
+export class PopupComponent extends BaseAbstract implements OnInit {
   blocksNode = this.gunService.gun.get('defaultUser').get('blocks');
 
   constructor(public gunService: GunService) {
     super();
+  }
+
+  ngOnInit(): void {
+    chrome.action.onClicked.addListener(async tab => {
+      const color = chrome.storage.sync.get('color');
+      console.log({ color });
+    });
   }
 
   async addBlock() {

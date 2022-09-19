@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GunService } from './shared/services/gun.service';
+import { IpcService } from './shared/services/ipc.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,8 @@ export class AppComponent implements OnInit {
   get ready() {
     return this._ready;
   }
-  constructor(private gunService: GunService) {
+  constructor(private gunService: GunService, private ipc: IpcService) {
+
     console.log('app started');
   }
 

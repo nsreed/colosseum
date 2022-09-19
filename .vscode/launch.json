@@ -8,7 +8,7 @@
       "type": "chrome",
       "request": "launch",
       "name": "Launch Chrome",
-      "url": "chrome://extensions",
+      "url": "chrome-extension://pfghcmjamfknolalhpppekdjpihhppje/index.html#/tab/channels",
       "runtimeArgs": [
         "--load-extension=${workspaceFolder}/dist"
       ],

@@ -9,11 +9,11 @@ module.exports = {
   mode: 'development',
   devtool: 'source-map',
   plugins: [
-    new ExtensionReloader({
-      reloadPage: true,
-      entries: {
-        background: 'background',
-      }
-    })
+    // new ExtensionReloader({
+    //   reloadPage: true,
+    //   entries: {
+    //     background: 'background',
+    //   }
+    // })
   ],
 } as Configuration;
