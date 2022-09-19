@@ -1,0 +1,12 @@
+mat-form-field {
+  width: 100%;
+  position: absolute;
+  bottom: 40px;
+}
+[mat-list-item] {
+  z-index: 100000;
+  height: 1em;
+}
+:host {
+  margin-bottom: 42px;
+}

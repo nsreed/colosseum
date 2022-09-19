@@ -27,3 +27,5 @@ All commands create artifact in /dist folder.
 - dev: `npm start` or `npm run watch`
 - prod: `npm run build`  
   Go to page `chrome://extensions/` for install extension manually.
+
+ALLOW PEOPLE TO NAME ROCKS

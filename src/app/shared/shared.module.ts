@@ -1,18 +1,8 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { COMPONENTS } from './components';
-import { DIRECTIVES } from './directives';
-import { PIPES } from './pipes';
-import { FormsModule } from '@angular/forms';
-import { GlobalNavigationComponent } from './components/global-navigation/global-navigation.component';
-import { BlockComponent } from './components/block/block.component';
-import { TimeStampComponent } from './components/time-stamp/time-stamp.component';
-import { BlockTitleComponent } from './components/block-title/block-title.component';
-import { BlockUrlComponent } from './components/block-url/block-url.component';
-import { BlockScreenshotComponent } from './components/block-screenshot/block-screenshot.component';
-import { BlockOwnerComponent } from './components/block-owner/block-owner.component';
-import { BlockFormComponent } from './components/block-form/block-form.component';
+import { NgModule } from '@angular/core';
+import { OverlayModule } from '@angular/cdk/overlay';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
@@ -40,7 +30,19 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { COMPONENTS } from './components';
+import { BlockFormComponent } from './components/block-form/block-form.component';
+import { BlockOwnerComponent } from './components/block-owner/block-owner.component';
+import { BlockScreenshotComponent } from './components/block-screenshot/block-screenshot.component';
+import { BlockTitleComponent } from './components/block-title/block-title.component';
+import { BlockUrlComponent } from './components/block-url/block-url.component';
+import { BlockComponent } from './components/block/block.component';
+import { ChannelSearchComponent } from './components/channel-search/channel-search.component';
 import { ChannelComponent } from './components/channel/channel.component';
+import { GlobalNavigationComponent } from './components/global-navigation/global-navigation.component';
+import { TimeStampComponent } from './components/time-stamp/time-stamp.component';
+import { DIRECTIVES } from './directives';
+import { PIPES } from './pipes';
 
 @NgModule({
   declarations: [
@@ -56,6 +58,7 @@ import { ChannelComponent } from './components/channel/channel.component';
     BlockOwnerComponent,
     BlockFormComponent,
     ChannelComponent,
+    ChannelSearchComponent,
   ],
   imports: [
     CommonModule,
@@ -89,6 +92,7 @@ import { ChannelComponent } from './components/channel/channel.component';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
+    OverlayModule
   ],
   exports: [
     CommonModule,

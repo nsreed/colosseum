@@ -1,6 +1,18 @@
 mat-card {
   height: 20em;
   width: 20em;
+  &:hover > mat-card-actions {
+    opacity: 1;
+  }
+}
+
+mat-card-actions {
+  opacity: 0;
+  transition: all 20ms ease-in-out 30ms;
+  margin-top: -9em;
+  button {
+    width: 100%;
+  }
 }
 
 mat-card-content {
@@ -9,8 +21,11 @@ mat-card-content {
   text-align: center;
   align-items: center;
 }
-
 :host {
   margin: 1em;
   display: block;
+}
+
+.dateAndCount {
+  font-size: 80%;
 }

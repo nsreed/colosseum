@@ -18,7 +18,7 @@ export class ChannelListComponent implements OnInit {
     this.channelsNode.open(d => {
       // console.log('new channel list');
       const data = { ...d } as any;
-      delete data['_'];
+      // delete data['_'];
       Object.keys(data).filter(k => data[k] === null || data[k] === undefined).forEach(k => delete data[k]);
       Object.keys(data).filter(k => !data[k].owner).forEach(k => delete data[k]);
       this.channels = data;

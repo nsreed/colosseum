@@ -1,9 +1,13 @@
 <mat-card *ngIf="channel">
   <mat-card-content>
-    <h2>{{ channel.title }}</h2>
+    <h1>{{ channel.title }}</h1>
     <app-block-owner [block]="channel"></app-block-owner>
-    <div>
+    <div class="dateAndCount">
+      35 blocks ⛻
       <app-time-stamp [block]="channel"></app-time-stamp>
     </div>
   </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>Connect</button>
+  </mat-card-actions>
 </mat-card>

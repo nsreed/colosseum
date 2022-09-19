@@ -4,7 +4,7 @@
     <app-block [block]="bkv.value"></app-block>
   </div>
 </div> -->
-<div fxLayout="row wrap" fxFlexAlign.lg="stretch stretch" fxLayoutGap="1em">
+<div fxLayout="row wrap" fxFlexAlign="strech center" fxLayoutGap="1em">
   <app-block [block]="block.value" *ngFor="let block of blocks | keyvalue">
     <!-- <button (click)="onRemoveClick(block.key)">Remove</button> -->
   </app-block>

@@ -14,4 +14,24 @@ $my-theme: mat.define-light-theme(
   )
 );
 
+h1 {
+  letter-spacing: -1px;
+  margin: 0 0 16px;
+  font-stretch: condensed;
+  color: rgb(75, 61, 103);
+}
+
+$my-custom-level: mat.define-typography-level(
+  $font-family: Roboto,
+  $font-weight: 400,
+  $font-size: 24px,
+  $line-height: 32px,
+  $letter-spacing: -1px,
+);
+
+$my-custom-typography: mat.define-typography-config(
+  $headline: $my-custom-level,
+);
+
+@include mat.core($my-custom-typography);
 @include mat.all-component-themes($my-theme);

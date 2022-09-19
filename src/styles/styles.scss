@@ -16,6 +16,8 @@
 // * {
 //     box-sizing: border-box;
 // }
+@import "@angular/cdk/overlay-prebuilt.css";
+
 html,
 body,
 html body {
@@ -61,4 +63,18 @@ label {
     min-width: 600px;
     max-width: 600px;
   }
+}
+
+.cloaked {
+  transition: all 20ms ease-in-out 300ms;
+  &:hover {
+    .hiding {
+      transition: all 200ms ease-in-out;
+      opacity: 1;
+    }
+  }
+}
+
+.hiding {
+  opacity: 0.5;
 }

@@ -16,7 +16,7 @@ export class BlockListComponent implements OnInit {
     // console.log('starting list, getting block from root?');
     this.blocksNode.open((d) => {
       const data = { ...d } as any;
-      delete data['_'];
+      // delete data['_'];
       Object.keys(data).filter(k => data[k] === null || data[k] === undefined).forEach(k => delete data[k]);
       Object.keys(data).filter(k => !data[k].owner).forEach(k => delete data[k]);
       this.blocks = data;

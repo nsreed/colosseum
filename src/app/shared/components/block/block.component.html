@@ -1,4 +1,4 @@
-<mat-card *ngIf="block">
+<mat-card *ngIf="block" class="cloaked">
   <mat-card-title
     ><app-block-title [block]="block"></app-block-title
   ></mat-card-title>
@@ -6,14 +6,31 @@
     <app-block-owner [block]="block"></app-block-owner>
     <app-time-stamp [block]="block"></app-time-stamp>
   </mat-card-subtitle>
-
-  <img
-    mat-card-image
-    *ngIf="block?.content?.screenshot?.base64"
-    src="{{ block?.content?.screenshot?.base64 }}"
-  />
-  <mat-card-actions>
-    <app-block-url [block]="block"></app-block-url>
+  <mat-card-content>
+    <app-channel-search *ngIf="isConnecting"></app-channel-search>
+    <img
+      mat-card-image
+      *ngIf="block?.content?.screenshot?.base64"
+      src="{{ block?.content?.screenshot?.base64 }}"
+    />
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-actions class="hiding">
+    <a [href]="block?.content?.url" mat-icon-button>
+      <mat-icon>fullscreen</mat-icon>
+    </a>
+    <button
+      fxFlex="1 1 auto"
+      mat-icon-button
+      cdkOverlayOrigin
+      #trigger="cdkOverlayOrigin"
+      (click)="toggle()"
+    >
+      <mat-icon>insert_link</mat-icon>
+    </button>
+    <button mat-icon-button>
+      <mat-icon>more_horiz</mat-icon>
+    </button>
   </mat-card-actions>
   <!-- <app-block-screenshot [block]="block"></app-block-screenshot> -->
 </mat-card>

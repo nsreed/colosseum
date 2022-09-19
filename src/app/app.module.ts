@@ -40,6 +40,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { OverlayContainer, FullscreenOverlayContainer } from '@angular/cdk/overlay';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -89,6 +90,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     ReactiveFormsModule,
     SharedModule,
   ],
-  providers: [],
+  providers: [{ provide: OverlayContainer, useClass: FullscreenOverlayContainer }],
 })
 export class AppModule { }
