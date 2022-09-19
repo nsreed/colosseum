@@ -16,7 +16,7 @@ export class ChannelListComponent implements OnInit {
 
   constructor(private gunService: GunService, private blockService: BlockService, private changes: ChangeDetectorRef) {
     this.channelsNode.open(d => {
-      console.log('new channel list');
+      // console.log('new channel list');
       const data = { ...d } as any;
       delete data['_'];
       Object.keys(data).filter(k => data[k] === null || data[k] === undefined).forEach(k => delete data[k]);

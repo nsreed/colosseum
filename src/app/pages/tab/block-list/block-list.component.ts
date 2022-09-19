@@ -13,7 +13,7 @@ export class BlockListComponent implements OnInit {
     [key: string]: IBlock
   } = {};
   constructor(public gunService: GunService, private changes: ChangeDetectorRef) {
-    console.log('starting list, getting block from root?');
+    // console.log('starting list, getting block from root?');
     this.blocksNode.open((d) => {
       const data = { ...d } as any;
       delete data['_'];
