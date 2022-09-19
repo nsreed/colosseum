@@ -38,3 +38,10 @@ I want them
 - [ ] pin channels
 - [ ] channel list
 - [ ] ordering (setting)
+
+### Motivator Plans
+
+- [ ] what would it take to be able to write notes on a website?
+- [ ] what does the session-user trust model look like
+  - I'm thinking a time limited chance to log in before the data is wiped from the cache, not to mention it was encrypted all along
+- [ ] how small can text be and have people nervously say it's fine?

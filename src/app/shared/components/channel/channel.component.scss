@@ -1,0 +1,16 @@
+mat-card {
+  height: 20em;
+  width: 20em;
+}
+
+mat-card-content {
+  padding-top: 5em;
+  height: 100%;
+  text-align: center;
+  align-items: center;
+}
+
+:host {
+  margin: 1em;
+  display: block;
+}

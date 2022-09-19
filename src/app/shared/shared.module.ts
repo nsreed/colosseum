@@ -40,6 +40,7 @@ import { MatStepperModule } from '@angular/material/stepper';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { ChannelComponent } from './components/channel/channel.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     BlockScreenshotComponent,
     BlockOwnerComponent,
     BlockFormComponent,
+    ChannelComponent,
   ],
   imports: [
     CommonModule,
@@ -95,7 +97,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     ...DIRECTIVES,
     ...PIPES,
     GlobalNavigationComponent,
-    BlockComponent
+    BlockComponent,
+    ChannelComponent
   ]
 })
 export class SharedModule { }

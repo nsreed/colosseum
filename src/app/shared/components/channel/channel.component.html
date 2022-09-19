@@ -1,0 +1,9 @@
+<mat-card *ngIf="channel">
+  <mat-card-content>
+    <h2>{{ channel.title }}</h2>
+    <app-block-owner [block]="channel"></app-block-owner>
+    <div>
+      <app-time-stamp [block]="channel"></app-time-stamp>
+    </div>
+  </mat-card-content>
+</mat-card>

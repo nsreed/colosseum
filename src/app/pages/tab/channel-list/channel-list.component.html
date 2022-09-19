@@ -1,8 +1,7 @@
 <div fxLayout="row wrap" fxFlexAlign.lg="center center" fxLayoutGap="1em">
-  <app-block
-    [block]="channel.value"
+  <app-channel
+    [channel]="channel.value"
     *ngFor="let channel of channels | keyvalue"
-  >
-  </app-block>
+  ></app-channel>
 </div>
 <button mat-button (click)="onCreateClick()">Create a New Channel</button>
