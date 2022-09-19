@@ -14,6 +14,7 @@
     "start": "yarn run watch",
     "watch": "ng build --watch --configuration=development",
     "build": "ng build --configuration=production",
+    "sources": "http-server ./dist -p 1337 --cors -d",
     "test": "ng test",
     "serve": "ng serve",
     "lint": "ng lint",

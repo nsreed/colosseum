@@ -39,8 +39,7 @@
               "path": "./custom-webpack.config.ts"
             },
             "serviceWorker": true,
-            "ngswConfigPath": "ngsw-config.json",
-            "webWorkerTsConfig": "tsconfig.worker.json"
+            "ngswConfigPath": "ngsw-config.json"
           },
           "defaultConfiguration": "production",
           "configurations": {
@@ -70,7 +69,6 @@
               "optimization": false,
               "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": true,
               "namedChunks": true,
               "customWebpackConfig": {
                 "path": "./custom-webpack-dev.config.ts"
@@ -111,8 +109,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": [],
-            "webWorkerTsConfig": "tsconfig.worker.json"
+            "scripts": []
           }
         },
         "lint": {

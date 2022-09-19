@@ -6,7 +6,8 @@
     "types": [
       "Chrome"
     ],
-    "sourceRoot": "/"
+    "sourceRoot": "http://localhost:1337/",
+    "mapRoot": "http://localhost:1337/",
   },
   "files": [
     "src/main.ts",

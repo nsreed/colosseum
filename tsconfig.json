@@ -5,7 +5,6 @@
     "baseUrl": ".",
     "sourceMap": true,
     "sourceRoot": "./",
-    "inlineSources": true,
     "outDir": "/dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
