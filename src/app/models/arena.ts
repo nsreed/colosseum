@@ -51,7 +51,13 @@ export type ICitation<T> = T & {
   body: string;
 }
 
-export type IBlock<T = any> = {
+export type ISouled = {
+  _: {
+    '#': string;
+  }
+}
+
+export type IBlock<T = any> = ISouled & {
   title: string;
   owner: {
     userName: string;
@@ -83,39 +89,39 @@ export type IGunRoot = {
   [key: string]: IUserRoot;
 }
 
-const vblock: IBlock<IReference<IResource>> = {
-  title: 'video',
-  owner: { userName: 'bob' },
-  description: 'a test reference to a video',
-  content: {
-    title: 'haha cats',
-    screenshot: {
-      base64: 'adfadsfasfdadsffsd'
-    },
-    url: 'http://cats.com'
-  }
-};
+// const vblock: IBlock<IReference<IResource>> = {
+//   title: 'video',
+//   owner: { userName: 'bob' },
+//   description: 'a test reference to a video',
+//   content: {
+//     title: 'haha cats',
+//     screenshot: {
+//       base64: 'adfadsfasfdadsffsd'
+//     },
+//     url: 'http://cats.com'
+//   }
+// };
 
-const cblock: IBlock<ICitation<IReference<IResource>>> = {
-  title: 'video2',
-  owner: { userName: 'bob' },
-  description: 'a test reference to a video',
-  content: {
-    title: 'haha cats',
-    screenshot: {
-      base64: 'adfadsfasfdadsffsd'
-    },
-    url: 'http://cats.com',
-    body: 'Hello. I love cats. Cats cats cats'
-  }
-};
+// const cblock: IBlock<ICitation<IReference<IResource>>> = {
+//   title: 'video2',
+//   owner: { userName: 'bob' },
+//   description: 'a test reference to a video',
+//   content: {
+//     title: 'haha cats',
+//     screenshot: {
+//       base64: 'adfadsfasfdadsffsd'
+//     },
+//     url: 'http://cats.com',
+//     body: 'Hello. I love cats. Cats cats cats'
+//   }
+// };
 
-const channelBlock: IChannel = {
-  title: 'default channel',
-  owner: { userName: 'bob' },
-  blocks: {
-    x: null,
-    y: null,
-    z: null
-  }
-}
+// const channelBlock: IChannel = {
+//   title: 'default channel',
+//   owner: { userName: 'bob' },
+//   blocks: {
+//     x: null,
+//     y: null,
+//     z: null
+//   }
+// }

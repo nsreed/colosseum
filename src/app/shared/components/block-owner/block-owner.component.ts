@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { BlockComponent } from '../block/block.component';
+import { IBlock } from '../../../models/arena';
+import { IGunChain } from 'gun';
 
 @Component({
   selector: 'app-block-owner',
@@ -7,6 +9,4 @@ import { BlockComponent } from '../block/block.component';
   styleUrls: ['./block-owner.component.scss']
 })
 export class BlockOwnerComponent extends BlockComponent {
-
-
 }

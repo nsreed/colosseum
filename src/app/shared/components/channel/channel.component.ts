@@ -7,8 +7,18 @@ import { IChannel } from '../../../models/arena';
   styleUrls: ['./channel.component.scss']
 })
 export class ChannelComponent implements OnInit {
+  private _channel: IChannel;
+  public get channel(): IChannel {
+    return this._channel;
+  }
   @Input()
-  public channel: IChannel;
+  public set channel(value: IChannel) {
+    this._channel = value;
+    if (!value._) {
+      console.log(value, 'is a hoax');
+
+    }
+  }
 
   constructor() { }
 

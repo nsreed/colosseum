@@ -42,7 +42,7 @@ export class PopupComponent extends BaseAbstract implements OnInit {
       timezoneOffset: new Date().getTimezoneOffset()
     }
 
-    const block: IBlock<IReference<IResource>> = {
+    const block: Partial<IBlock<IReference<IResource>>> = {
       title,
       owner,
       content: {

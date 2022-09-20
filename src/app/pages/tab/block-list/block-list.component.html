@@ -5,8 +5,10 @@
   </div>
 </div> -->
 <div fxLayout="row wrap" fxFlexAlign="strech center" fxLayoutGap="1em">
-  <app-block [block]="block.value" *ngFor="let block of blocks | keyvalue">
-    <!-- <button (click)="onRemoveClick(block.key)">Remove</button> -->
-  </app-block>
+  <ng-container *ngFor="let block of blockMap | keyvalue">
+    <app-block [block]="block.value" *ngIf="block.value !== undefined">
+      <!-- <button (click)="onRemoveClick(block.key)">Remove</button> -->
+    </app-block>
+  </ng-container>
 </div>
 <!-- <button mat-button (click)="onCreateClick()">Create a New Channel</button> -->

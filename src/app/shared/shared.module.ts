@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { OverlayModule } from '@angular/cdk/overlay';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatButtonModule } from '@angular/material/button';
@@ -92,7 +92,8 @@ import { PIPES } from './pipes';
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    OverlayModule
+    OverlayModule,
+    ReactiveFormsModule,
   ],
   exports: [
     CommonModule,

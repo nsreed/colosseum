@@ -7,7 +7,11 @@
     <app-time-stamp [block]="block"></app-time-stamp>
   </mat-card-subtitle>
   <mat-card-content>
-    <app-channel-search *ngIf="isConnecting"></app-channel-search>
+    <app-channel-search
+      *ngIf="isConnecting"
+      (blur)="isConnecting = false"
+      (change)="onConnected($event)"
+    ></app-channel-search>
     <img
       mat-card-image
       *ngIf="block?.content?.screenshot?.base64"

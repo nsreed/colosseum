@@ -1,9 +1,9 @@
-<mat-card *ngIf="channel">
+<mat-card *ngIf="channel && channel['_']">
   <mat-card-content>
     <h1>{{ channel.title }}</h1>
     <app-block-owner [block]="channel"></app-block-owner>
     <div class="dateAndCount">
-      35 blocks ⛻
+      {{ (channel.blocks || {} | keyvalue).length }} ⛻
       <app-time-stamp [block]="channel"></app-time-stamp>
     </div>
   </mat-card-content>

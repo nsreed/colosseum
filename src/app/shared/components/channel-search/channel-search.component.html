@@ -1,9 +1,22 @@
 <mat-action-list compact>
-  <button mat-list-item>Recent channel 1</button>
-  <button mat-list-item>Recent channel 2</button>
-  <button mat-list-item>Recent channel 3</button>
+  <h3 mat-subheader>Recent Channels</h3>
+
+  <button
+    (mousedown)="onSelectExisting(channel.value)"
+    *ngFor="let channel of recent | keyvalue"
+    mat-list-item
+  >
+    <app-block-title [block]="channel.value"></app-block-title>
+  </button>
 </mat-action-list>
+
 <mat-form-field>
-  <input matInput type="search" />
-  <mat-label>Please, tell us your secrets</mat-label>
+  <input
+    [formControl]="searchControl"
+    #SearchInput
+    matInput
+    type="search"
+    autofocus
+  />
+  <mat-label>Type channel name</mat-label>
 </mat-form-field>
