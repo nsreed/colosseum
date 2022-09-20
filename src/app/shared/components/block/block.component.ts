@@ -76,8 +76,8 @@ export class BlockComponent implements OnInit {
   }
 
   onConnected(channelOrTitle: any) {
+    // This could be a string (new channel name)
     if ('string' === typeof channelOrTitle) {
-      console.log(`gonna try making a new block? or something?`, channelOrTitle);
       let nb = this.blockFactory.createBlock();
       nb = {
         ...nb,
@@ -89,20 +89,12 @@ export class BlockComponent implements OnInit {
       this.isConnecting = false;
       return;
     }
-    // Otherwise it's an existing channel.
+
+    // Or an existing channel picked by the user
     const theirSoul = channelOrTitle._['#'] as string;
     console.log('their soul is ', theirSoul);
 
-    const ourSoul = this.block._['#'] as string;
-    console.log('our soul is', ourSoul);
-    return;
-
     const theChannel = this.channels.channels.get(theirSoul) as IGunChain<IChannel>;
     theChannel.get('blocks').set(this.block);
-    return;
-
-    // const nb = {title
-    //   ...this.blockFactory.createBlock()}
-    // this.channels.channels.set()
   }
 }
